@@ -62,6 +62,22 @@
       <img width = "500px" alt="DNS Record Types Explained" src="./assets/blog-post-6.webp">
     <p>
   </a>
+ 
+  ### [How DNS Resolution Works](https://maiamansingh.hashnode.dev/how-dns-resolution-works)
+
+<a href="https://maiamansingh.hashnode.dev/how-dns-resolution-works">
+      <p align=center>
+      <img width = "500px" alt="DNS Record Types Explained" src="./assets/blog-post-7.webp">
+    <p>
+  </a>
+  
+  ### [TCP vs UDP When to Use What, and How TCP Relates to HTTP](https://maiamansingh.hashnode.dev/tcp-vs-udp-when-to-use-what-and-how-tcp-relates-to-http)
+
+<a href="https://maiamansingh.hashnode.dev/tcp-vs-udp-when-to-use-what-and-how-tcp-relates-to-http">
+      <p align=center>
+      <img width = "500px" alt="DNS Record Types Explained" src="./assets/blog-post-8.webp">
+    <p>
+  </a>
 
 
 
