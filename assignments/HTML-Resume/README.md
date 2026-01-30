@@ -26,7 +26,7 @@ This is a single-page resume website built entirely with **pure HTML** as part o
 ## 📸 Screenshots
 Below is a preview of the final output:
 
-![Aman Resume](./assignments/HTML-Resume/aman-resume.jpg)
+![Aman Resume](./aman-resume.jpg)
 
 > **Note:** Ensure the image file `Aman Singh Resume.jpg` is uploaded to your root folder for this to display correctly.
 
@@ -34,7 +34,7 @@ Below is a preview of the final output:
 
 ## 🚀 Live Demo
 You can view the live version of this project here:
-[**View Live Resume**](https://github.com/maiamansingh/Web-Dev-Cohort-2026/tree/main/assignments/HTML-Resume/)
+[**View Live Resume**](https://my-resume-kohl-seven.vercel.app/)
 
 ---
 
