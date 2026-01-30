@@ -27,7 +27,7 @@ This is a single-page resume website built entirely with **pure HTML** as part o
 Below is a preview of the final output:
 
 <p align="center">
-  <img src="./assignments/HTML-Resume/aman-resume.jpg" width="600" alt="Aman Singh Resume Screenshot">
+  <img src="./assignments/html-resume/aman-resume.jpg" width="600" alt="Aman Singh Resume Screenshot">
 </p>
 
 > **Note:** Ensure the image file `Aman Singh Resume.jpg` is uploaded to your root folder for this to display correctly.
