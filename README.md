@@ -1,5 +1,5 @@
 <a href="https://maiamansingh.hashnode.dev/">
-  <h1 align="center">Ayodhya Vlogger: The Digital Archive</h1>
+  <h1 align="center"> Cohort Web Dev 2026</h1>
 </a>
 
 <p align="center">
