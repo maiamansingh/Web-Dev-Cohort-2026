@@ -34,7 +34,7 @@ Below is a preview of the final output:
 
 ## 🚀 Live Demo
 You can view the live version of this project here:
-[**View Live Resume**](https://my-resume-kohl-seven.vercel.app/)
+[**View Live Resume**](https://aman-resume-zeta.vercel.app//)
 
 ---
 
