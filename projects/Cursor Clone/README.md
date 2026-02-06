@@ -1,5 +1,13 @@
 # Cursor Landing Page Clone
 
+<div align="center">
+
+[![YouTube Badge](https://img.shields.io/badge/-Ayodhya_Vlogger-red?style=flat&logo=youtube&logoColor=white)](https://www.youtube.com/@AyodhyaVlogger)
+[![Instagram Badge](https://img.shields.io/badge/-@AyodhyaVlogger-E4405F?style=flat&logo=instagram&logoColor=white)](https://www.instagram.com/AyodhyaVlogger/)
+[![Mail Badge](https://img.shields.io/badge/-amansinghkororaghavpur@gmail.com-c0392b?style=flat&logo=gmail&logoColor=white)](mailto:amansinghkororaghavpur@gmail.com)
+
+</div>
+
 ## Overview
 Desktop-first visual recreation of the Cursor developer tool landing page using only HTML and CSS.
 
@@ -31,7 +39,7 @@ Desktop-first visual recreation of the Cursor developer tool landing page using 
 - HTML + CSS only
 
 ## Screenshots
-(Add screenshots here)
+![Cursor Website](./cursor-scr.jpg)
 
 ## Live Demo
-(Add GitHub Pages link)
+[**View Live **](https://cursor-clone-virid.vercel.app//)

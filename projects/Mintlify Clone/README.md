@@ -1,4 +1,11 @@
 # Mintlify Landing Page Clone
+<div align="center">
+
+[![YouTube Badge](https://img.shields.io/badge/-Ayodhya_Vlogger-red?style=flat&logo=youtube&logoColor=white)](https://www.youtube.com/@AyodhyaVlogger)
+[![Instagram Badge](https://img.shields.io/badge/-@AyodhyaVlogger-E4405F?style=flat&logo=instagram&logoColor=white)](https://www.instagram.com/AyodhyaVlogger/)
+[![Mail Badge](https://img.shields.io/badge/-amansinghkororaghavpur@gmail.com-c0392b?style=flat&logo=gmail&logoColor=white)](mailto:amansinghkororaghavpur@gmail.com)
+
+</div>
 
 ## Overview
 Desktop-first visual recreation of the Mintlify documentation platform landing page using only HTML and CSS. This project focuses on high-fidelity layout accuracy, gradients, and glassmorphism effects without relying on JavaScript frameworks.
@@ -31,8 +38,7 @@ Desktop-first visual recreation of the Mintlify documentation platform landing p
 - HTML + CSS only
 
 ## Screenshots
-![Hero Section](./screenshots/hero.png)
-![Customer Stories](./screenshots/carousel.png)
+![Mintlify Website](./mintlify-scr.jpg)
 
 ## Live Demo
-(Add your GitHub Pages or Vercel link here)
+[**View Live **](https://mintlify-clone-lyart.vercel.app//)
