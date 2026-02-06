@@ -37,9 +37,13 @@ Desktop-first visual recreation of the Cursor developer tool landing page using 
 - No frameworks
 - Desktop only
 - HTML + CSS only
+---
+
+## 🚀 Live Demo
+You can view the live version of this project here:
+[**View Live Demo**](https://cursor-clone-virid.vercel.app//)
+
+---
 
 ## Screenshots
 ![Cursor Website](./cursor-scr.jpg)
-
-## Live Demo
-[**View Live **](https://cursor-clone-virid.vercel.app//)

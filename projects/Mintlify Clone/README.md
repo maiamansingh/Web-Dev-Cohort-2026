@@ -37,6 +37,12 @@ Desktop-first visual recreation of the Mintlify documentation platform landing p
 - Desktop-first design
 - HTML + CSS only
 
+## 🚀 Live Demo
+You can view the live version of this project here:
+[**View Live Demo**](https://mintlify-clone-lyart.vercel.app//)
+
+---
+
 ## Screenshots
 ![Mintlify Website](./mintlify-scr.jpg)
 
