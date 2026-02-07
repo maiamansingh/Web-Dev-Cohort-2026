@@ -1,8 +1,3 @@
-/* =========================================
-   1. FONTS & VARIABLES
-   ========================================= */
-
-/* --- Fonts (From your code) --- */
 @font-face {
     font-family: CursorGothic;
     src: url('https://cursor.com/media/CursorGothic_Regular-s.p.a361088d.woff2') format("woff2");
@@ -35,7 +30,6 @@
     font-style: normal
 }
 
-/* --- Theme Variables --- */
 :root {
     --font-sans: "CursorGothic", "CursorGothic Fallback", system-ui, -apple-system, sans-serif;
     --font-mono: "berkeleyMono", ui-monospace, SFMono-Regular, monospace;
