@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChaiTailwind</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Syne:wght@400;700&family=DM+Mono&display=swap" rel="stylesheet">
+</head>
+<body class="chai-bg-lightgray chai-font-sans chai-m-0 chai-p-0 chai-w-full chai-overflow-auto">
+
+    <div class="chai-w-full chai-min-h-screen chai-flex chai-flex-col chai-justify-center chai-items-center chai-bg-darkgray chai-color-white chai-text-center chai-p-6">
+        <h1 class="chai-text-3xl chai-font-poppins chai-font-extrabold chai-mb-2 chai-tracking-wide">
+            ChaiTailwind
+        </h1>
+        <p class="chai-text-lg chai-font-light chai-color-muted chai-mb-4 chai-w-half">
+            A lightweight, custom-built, dictionary-based CSS engine for the Web Dev Cohort 2026.
+        </p>
+        <div class="chai-flex chai-gap-2">
+            <a href="./README.md" class="chai-bg-blue chai-color-white chai-px-4 chai-py-2 chai-rounded-full chai-font-semibold chai-no-underline chai-shadow-lg chai-cursor-pointer">
+                Read the Docs
+            </a>
+            <a href="https://github.com/maiamansingh/Web-Dev-Cohort-2026/tree/main/projects/Chai-Tailwind" target="_blank" class="chai-bg-white chai-color-black chai-px-4 chai-py-2 chai-rounded-full chai-font-semibold chai-no-underline chai-shadow-lg chai-cursor-pointer">
+                GitHub Repo
+            </a>
+        </div>
+    </div>
+
+    <div id="docs" class="chai-w-full chai-flex chai-flex-col chai-items-center chai-py-4 chai-bg-lightgray">
+        
+        <div class="chai-text-center chai-mb-4">
+            <h2 class="chai-text-2xl chai-font-syne chai-font-bold chai-color-black">How It Works</h2>
+            <p class="chai-text-md chai-color-gray chai-mt-1">Understanding the Vanilla JavaScript Engine</p>
+        </div>
+
+        <div class="chai-bg-white chai-p-4 chai-rounded-lg chai-shadow-lg chai-w-half chai-mb-4 chai-border chai-border-gray">
+            <h3 class="chai-text-xl chai-font-poppins chai-font-semibold chai-color-blue chai-mb-1">1. The Dictionary Map</h3>
+            <p class="chai-text-sm chai-font-normal chai-color-darkgray chai-leading-normal chai-mb-2">
+                Instead of using complex Regular Expressions to parse strings, ChaiTailwind uses a highly reliable dictionary object. Every supported class name (e.g., <span class="chai-font-mono chai-bg-lightgray chai-color-red chai-px-1 chai-rounded-sm">chai-bg-red</span>) is mapped directly to its exact CSS property and value.
+            </p>
+        </div>
+
+        <div class="chai-bg-white chai-p-4 chai-rounded-lg chai-shadow-lg chai-w-half chai-mb-4 chai-border chai-border-gray">
+            <h3 class="chai-text-xl chai-font-poppins chai-font-semibold chai-color-orange chai-mb-1">2. DOM Traversal</h3>
+            <p class="chai-text-sm chai-font-normal chai-color-darkgray chai-leading-normal chai-mb-2">
+                When the page loads, a simple beginner-friendly script grabs every single HTML element using <span class="chai-font-mono chai-bg-lightgray chai-color-red chai-px-1 chai-rounded-sm">getElementsByTagName("*")</span>. It then loops through every element to check its class list.
+            </p>
+        </div>
+
+        <div class="chai-bg-white chai-p-4 chai-rounded-lg chai-shadow-lg chai-w-half chai-mb-4 chai-border chai-border-gray">
+            <h3 class="chai-text-xl chai-font-poppins chai-font-semibold chai-color-green chai-mb-1">3. Inline Application</h3>
+            <p class="chai-text-sm chai-font-normal chai-color-darkgray chai-leading-normal chai-mb-2">
+                If the script finds a class that matches a key in our dictionary, it extracts the target property (like <span class="chai-font-mono chai-bg-lightgray chai-color-red chai-px-1 chai-rounded-sm">backgroundColor</span>) and applies the value directly to the element's inline style object.
+            </p>
+        </div>
+
+        <div class="chai-bg-darkgray chai-p-4 chai-rounded-lg chai-shadow-lg chai-w-half chai-border chai-border-black chai-mt-2">
+            <h3 class="chai-text-md chai-font-poppins chai-font-semibold chai-color-white chai-mb-2">Example Output:</h3>
+            <p class="chai-font-mono chai-text-sm chai-color-green chai-leading-loose">
+                // Input HTML<br>
+                &lt;div class="chai-p-2"&gt;<br><br>
+                // Engine Output<br>
+                &lt;div style="padding: 16px;"&gt;
+            </p>
+        </div>
+
+    </div>
+
+    <div class="chai-w-full chai-bg-black chai-color-white chai-p-4 chai-text-center chai-flex chai-flex-col chai-items-center">
+        <p class="chai-text-sm chai-font-light chai-color-muted">
+            Built for Web Dev Cohort 2026. Designed with ChaiTailwind.
+        </p>
+    </div>
+
+    <script src="chai.js"></script>
+</body>
+</html>
