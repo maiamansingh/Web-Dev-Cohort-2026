@@ -106,10 +106,17 @@ const chaiStyles = {
 
 function applyChaiStyles() {
   document.querySelectorAll("*").forEach((element) => {
-    element.classList.forEach((cls) => {
-      if (cls in chaiStyles) {
-        const { property, value } = chaiStyles[cls];
-        element.style[property] = value;
+    const classNames = Array.from(element.classList);
+
+    classNames.forEach((cls) => {
+      if (cls.startsWith("chai-")) {
+        
+        if (cls in chaiStyles) {
+          const { property, value } = chaiStyles[cls];
+          
+          element.style[property] = value;
+        }
+        element.classList.remove(cls);
       }
     });
   });
