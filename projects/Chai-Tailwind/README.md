@@ -1,57 +1,27 @@
 # ChaiTailwind - Custom CSS Engine
-**Web Dev Cohort 2026**
 
-ChaiTailwind is a lightweight, utility-first CSS engine built entirely in vanilla JavaScript. It allows developers to style HTML elements rapidly by writing custom utility classes prefixed with `chai-` (e.g., `chai-bg-red`, `chai-p-4`). The engine scans the DOM and dynamically converts these classes into inline CSS styles.
+div align="center">
 
----
+[![YouTube Badge](https://img.shields.io/badge/-Ayodhya_Vlogger-red?style=flat&logo=youtube&logoColor=white)](https://www.youtube.com/@AyodhyaVlogger)
+[![Instagram Badge](https://img.shields.io/badge/-@AyodhyaVlogger-E4405F?style=flat&logo=instagram&logoColor=white)](https://www.instagram.com/AyodhyaVlogger/)
+[![Mail Badge](https://img.shields.io/badge/-maiamansingh@gmail.com-c0392b?style=flat&logo=gmail&logoColor=white)](mailto:maiamansingh@gmail.com)
 
-## 🚀 How It Works
+# ☕️ ChaiTailwind CSS Engine
 
-Instead of relying on complex string parsing or regular expressions, this engine uses a highly stable, beginner-friendly **Dictionary Mapping** approach. 
+ChaiTailwind is a custom, lightweight utility-first CSS engine built for the Web Dev Cohort 2026. It allows developers to style HTML pages dynamically without writing traditional CSS files.
 
-
-
-### The 3-Step Process:
-1. **The Dictionary Object:** The `chai.js` file contains a large object called `chaiStyles`. This acts as our source of truth, mapping our custom classes directly to real CSS properties and values (e.g., `"chai-color-blue": { property: "color", value: "#3b82f6" }`).
-2. **DOM Traversal:** The script uses `document.getElementsByTagName("*")` to grab every single HTML element rendered on the page. 
-3. **Loop & Apply:** It loops through every element, and then loops through that element's `classList`. If it finds a class that matches a key in our `chaiStyles` dictionary, it applies that exact property and value directly to the element's inline `style` attribute.
-
----
-
-## 🛠️ Supported Utilities
-
-The engine supports a wide range of utility classes for building modern, responsive layouts:
-
-* **Spacing:** Padding (`chai-p-*`, `chai-px-*`, `chai-py-*`) and Margin (`chai-m-*`, `chai-mt-*`, `chai-mx-auto`)
-* **Colors:** Backgrounds (`chai-bg-red`, `chai-bg-gray`, etc.) and Text Colors (`chai-color-blue`, `chai-color-muted`, etc.)
-* **Typography:** Font sizes (`chai-text-sm`, `chai-text-3xl`), Font weights (`chai-font-bold`), Font families (`chai-font-sans`, `chai-font-poppins`), and Alignment (`chai-text-center`)
-* **Layout & Flexbox:** Display (`chai-flex`, `chai-block`), Direction (`chai-flex-col`), Justify/Align (`chai-justify-center`, `chai-items-center`), and Gaps (`chai-gap-2`)
-* **Borders & Radius:** Border styles (`chai-border`, `chai-border-none`) and Border radius (`chai-rounded-md`, `chai-rounded-full`)
-* **Sizing:** Width (`chai-w-full`, `chai-w-half`) and Height (`chai-h-screen`)
-* **Effects:** Shadows (`chai-shadow-lg`) and Opacity (`chai-opacity-50`)
+## 🔗 Quick Links
+* **Live Demo:** [Vercel Deployment](https://chai-tailwind-delta.vercel.app/)
+* **Repository:** [GitHub Code](https://github.com/maiamansingh/Web-Dev-Cohort-2026/tree/main/projects/Chai-Tailwind)
+* **Video Walkthrough:** [YouTube Demo](https://www.youtube.com/watch?v=joj3V7tCY4Q)
+* **Social Posts:** [LinkedIn Post](https://www.linkedin.com/posts/maiamansingh_3b82f6-ffffff-activity-7441482784159727616-hr6J?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADYug9EBd_8Qr5LaK2_PKEGJ55GOlSRXENg) | [X (Twitter) Post](https://x.com/mai_amansingh/status/2035718359434801301?s=20)
 
 ---
 
-## 📂 Project Structure
+## 🚀 How to Use
 
-* `index.html` - A premium, modern landing page built *entirely* using ChaiTailwind utility classes. It serves as both the demo and the visual documentation.
-* `chai.js` - The core JavaScript engine containing the dictionary map and the DOM traversal loop.
-* `README.md` - Project documentation and architecture explanation.
+Simply include the `chai.js` script at the bottom of your HTML `<body>`. Then, apply custom utility classes prefixed with `chai-` to any HTML element.
 
----
-
-## 💻 How to Run Locally
-
-1. Clone or download this repository to your local machine.
-2. Ensure `index.html` and `chai.js` are in the same folder.
-3. Open `index.html` in any modern web browser.
-4. *Note: Because this uses a simple bottom-of-body execution script instead of an event listener, the `<script src="chai.js"></script>` tag must always remain at the very end of the HTML `<body>`.*
-
----
-
-## 🔍 Verifying the Output
-
-To see the engine in action:
-1. Open the project in your browser.
-2. Right-click on any styled element (like a button or a card) and select **"Inspect"**.
-3. Look at the HTML in the Elements panel. You will see that the `chai-*` classes have been successfully translated into inline `style="..."` attributes by the JavaScript engine!
+**Example Input:**
+```html
+<div class="chai-bg-blue chai-text-white chai-p-4">Hello</div>
