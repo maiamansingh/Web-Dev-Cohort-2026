@@ -1,7 +1,5 @@
 # ChaiTailwind - Custom CSS Engine
 
-div align="center">
-
 [![YouTube Badge](https://img.shields.io/badge/-Ayodhya_Vlogger-red?style=flat&logo=youtube&logoColor=white)](https://www.youtube.com/@AyodhyaVlogger)
 [![Instagram Badge](https://img.shields.io/badge/-@AyodhyaVlogger-E4405F?style=flat&logo=instagram&logoColor=white)](https://www.instagram.com/AyodhyaVlogger/)
 [![Mail Badge](https://img.shields.io/badge/-maiamansingh@gmail.com-c0392b?style=flat&logo=gmail&logoColor=white)](mailto:maiamansingh@gmail.com)
