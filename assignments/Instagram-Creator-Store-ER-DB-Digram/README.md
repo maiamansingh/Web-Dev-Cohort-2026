@@ -4,8 +4,6 @@
 This repository contains the Entity-Relationship (ER) diagram for a growing Instagram-based creator store. The database is designed to handle the unique business logic of selling both **Thrifted items** (unique, single-stock, condition-specific) and **Handmade items** (batch production, multiple sizes/colors, reusable inventory).
 
 ## 🖼️ ER Diagram
-*(Make sure to upload your exported image in the repository and update the image name below if it's different)*
-
 ![Thrift Store ER Diagram](./er-diagram.png)
 
 ## 🗄️ Database Schema Highlights
