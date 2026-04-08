@@ -1,0 +1,103 @@
+title Clinic Appointment and Diagnostics Platform
+
+users [icon: user, color: blue] {
+ user_id serial pk
+ name varchar (200)
+ email varchar(100) unique not null
+ phone char(15)
+ password varchar(256)
+ role enum('patient', 'doctor')
+ forgot_password_token text
+ created_at timestamp
+ updated_at timestamp
+}
+
+patients [icon: users, color: blue] {
+  patient_id serial unique pk
+  user_name varchar (200) fk
+  dob date
+  gender enum('male','female','other')
+  user_phone int fk
+  address text
+  created_at timestamp
+}
+doctors [icon: user-plus, color: blue] {
+  doctor_id serial pk
+  user_name varchar (200) fk
+  name varchar(200)
+  specialty varchar(100)
+  consult_fee dec
+  created_at timestamp
+}
+
+appointments [icon: calendar, color: green] {
+  appointment_id serial pk
+  doctor_id int fk
+  patient_id int fk
+  appointment_date date
+  time_slot varchar(50)
+  status enum('scheduled', 'completed', 'cancelled')
+  appointment_charge varchar(50)
+  created_at timestamp
+}
+
+consultation [icon: activity, color:red ] {
+  consultaion_id serial pk
+  appointment_id int fk
+  symptoms text
+  doctor_notes text
+  prescription text
+  created_at timestamp
+}
+
+tests [icon: activity, color: purple] {
+  test_id serial pk
+  test_name varchar(200)
+  description text
+  cost decimal
+}
+
+prescribed_tests [icon: file-text, color: yellow] {
+  prescribed_test_id serial pk
+  consultation_id int fk
+  patient_id int fk
+  test_id int fk
+  test_status enum('pending', 'completed')
+  created_at timestamp
+}
+
+reports [icon: file, color: blue] {
+  report_id serial pk
+  prescribed_test_id int fk
+  result_summary text
+  report_file_url text
+  generated_at timestamp
+}
+
+payments [icon: money, color: green] {
+  payment_id serial pk
+  appointment_id int fk
+  prescribed_test_id int fk
+  total_amount decimal
+  payment_status enum('pending', 'paid')
+  payment_mode varchar(50)
+  payment_date timestamp
+}
+
+users.role  - patients.patient_id
+users.role  - doctors.doctor_id
+appointments.appointment_id  - consultation.appointment_id
+
+
+patients.patient_id < appointments.patient_id:[color: yellow]
+doctors.doctor_id < appointments.doctor_id:[color: yellow]
+
+
+consultation.consultation_id < prescribed_tests.consultation_id: [color: yellow]
+consultation.appointment_id - payments.payment_id
+
+
+prescribed_tests.test_id < tests.test_id : [color: yellow]
+prescribed_tests.prescribed_test_id - reports.prescribed_test_id
+appointments.appointment_id - payments.appointment_id
+prescribed_tests.test_id - payments.prescribed_test_id
