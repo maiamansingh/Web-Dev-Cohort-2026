@@ -4,7 +4,6 @@
 This database schema models the operational workflow of a modern clinic. It handles the complete patient journey: booking an appointment, attending a consultation, getting diagnostic tests prescribed, receiving reports, and processing payments.
 
 ## 🖼️ ER Diagram
-*(Upload your diagram as `er-diagram.png` in this repository)*
 ![Clinic Platform ER Diagram](./er-diagram.png)
 
 ## 🗄️ Database Architecture & Business Logic
