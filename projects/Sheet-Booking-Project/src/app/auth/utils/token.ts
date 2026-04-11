@@ -4,7 +4,7 @@ export interface UserTokenPayload {
     id: string
 }
 
-const JWT_SECRET = 'myjwtsecret'
+const JWT_SECRET = process.env.JWT_SECRET || 'myjwtsecret'
 
 export function createUserToken(payload: UserTokenPayload) {
     const token = JWT.sign(payload, JWT_SECRET)
