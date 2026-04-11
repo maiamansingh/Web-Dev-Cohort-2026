@@ -1,0 +1,106 @@
+title ## Instagram Thrift Creator Store - DB ER Diagram
+// users, products, coustomer, order, payments 
+
+users [icon: user, color: green ] {
+  id serial pk
+  username varchar(50) unique not null
+  name varchar (200)
+  email varchar(100) unique not null
+  phone char(15)
+  dob date
+  password varchar(256)
+  bio text
+  avatar_url text
+  forgot_password_token text
+  email_verification_token text
+  is_account_type text varchar(200)
+
+  created_at timestamp
+  updated_at timestamp
+}
+products [icon: store, color: orange] {
+  id serial unique pk //unique product Id 
+  users_username fk  // Vendor name 
+  product_name text varchar(200)
+  product_description text null
+  product_image text null // can be null
+  product_price int null
+  product_quantity int 
+  products_size varchar int (50)
+  products_colour text  varchar (100)
+  product_category: enum('thrift', 'handmade')
+  product_condition text null
+  product_instock bollean 
+  created_at timestamp
+  updated_at timestamp
+}
+
+coustomers [icon: user-check,color: yellow ] {
+  coustomer_id text unique pk
+  users_username fk
+  name varchar(200)
+  email varchar(100) unique not null
+  phone_number char(15) required not null
+  appartment_name varchar text not null
+  city varchar (100)
+  country varchar (100)
+  pin_code int (100) not null
+  created_at timestamp
+  updated_at timestamp
+}
+orders [icon: shopping-cart, color: blue]{
+  id text unique pk
+  coustomers_coustomer_id int fk
+  orders_tottal int 
+  payment_mode text 
+  order_status enum('pending', 'shipped', 'delivered')
+  order_date date
+  created_at timestamp
+  updated_at timestamp
+}
+payments [icon: money, color: red ]{
+  payment_id serial pk
+  orders_id text fk
+  orders_tottal int 
+  status enum('success ', 'failed ')
+  transaction_id int  
+  created_at timestamp
+  updated_at timestamp
+}
+Order_Items [icon: shopify, color: yellow]{
+order_item_id serial (PK)
+orders_id text (FK)
+products_product_id int (FK)
+quantity int 
+price_at_purchase
+}
+Shipping [icon: shopping-bag, color: purple ]{
+  shipping_id (PK)
+  orders_id (FK)
+  tracking_number int 
+  courier_name text 
+  estimated_delivery text
+  current_status enum('shipped', 'delivered ')
+}
+
+// ?? IMP: theses relations might change based on the business requirement but the consideration that we did, on basis of that we designed this ER
+
+users.username < products.users_username
+
+users.username < coustomers.users_username
+
+coustomers.coustomer_id < orders.coustomers_coustomer_id
+
+orders.id < Order_Items.orders_id
+
+products.id < Order_Items.products_product_id
+
+orders.id - payments.orders_id
+orders.id - Shipping.orders_id
+
+
+
+
+
+
+

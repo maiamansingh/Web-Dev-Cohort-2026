@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+
+ p {
+        color: rgb(249, 191, 34);
+        font-weight: bold;
+      }
