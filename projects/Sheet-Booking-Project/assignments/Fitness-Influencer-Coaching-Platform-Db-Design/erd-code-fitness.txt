@@ -1,0 +1,93 @@
+title ## Fitness Influencer Coaching Platform DB ER Diagram
+// users, products, coustomer, order, payments 
+
+users [icon: user, color: green ] {
+  user_id serial pk
+  name varchar (200)
+  email varchar(100) unique not null
+  phone char(15)
+  password varchar(256)
+  role enum('client', 'trainer ')
+  forgot_password_token text
+  email_verification_token text
+  created_at timestamp
+  updated_at timestamp
+}
+clients [icon: user-lock, color: orange] {
+  client_id serial unique pk
+  user_id int fk
+  client_goal text 
+  created_at timestamp
+  updated_at timestamp
+}
+trainers [icon: user-plus, color: green ] {
+  trainer_id serial unique pk
+  user_id int fk
+  sessions int 
+  bio text
+  specialty varchar(200)
+  created_at timestamp
+  updated_at timestamp
+}
+
+plans [icon: notebook, color: blue]{
+  plan_id text unique pk
+  trainer_id int fk
+  plain_name varchar (100)
+  duration_week int
+  plain_price decimals 
+  created_at timestamp
+}
+sessions [icon: activity, color: red ]{
+  session_id serial pk
+  trainer_id int  fk
+  client_id int fk
+  schedule_time datetime
+  meeting_link text 
+  created_at timestamp
+  updated_at timestamp
+}
+subscription [icon: shopify, color: yellow]{
+subscription_id serial pk
+client_id int fk
+plan_id text fk
+start date
+end date
+status enum('valid','ended')
+created_at timestamp
+updated_at timestamp
+}
+payments [icon: money, color: purple ]{
+  payment_id serial pk
+  subscription_id int fk
+  amount int 
+  transaction_id text 
+  status enum('success','failed')
+  created_at timestamp
+  updated_at timestamp
+  
+}
+checkins [icon: mobile, color: purple ]{
+  checkin_id serial pk
+  client_id int fk
+  date date
+  weight float
+  measurements text
+  trainer_notes text
+  created_at timestamp
+  updated_at timestamp
+}
+
+users.user_id  -  clients.user_id
+users.user_id  -  trainers.user_id
+
+trainers.trainer_id <  plans.trainer_id: [color: yellow]
+clients.client_id  <  sessions.client_id: [color: yellow]
+clients.client_id <  subscription.client_id: [color: yellow]
+
+plans.plan_id < subscription.plan_id: [color: yellow]
+
+subscription.subscription_id - payments.subscription_id
+
+clients.client_id <  checkins.client_id: [color: yellow]
+

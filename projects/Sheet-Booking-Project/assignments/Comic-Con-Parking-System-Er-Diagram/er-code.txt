@@ -1,0 +1,72 @@
+title Comic-Con Parking System
+zones [icon: map, color: blue] {
+  zone_id serial pk
+  zone_name varchar(100)
+  level_number int
+}
+vehicles [icon: car, color: blue] {
+  vehicale_id serial pk
+  number_plate varchar (20)
+  type_id int fk 
+  registered_at timestamp
+}
+vehicle_categories [icon:truck, color: blue] {
+  type_id serial pk
+  vehicale_type num('bikes','cars', 'SUVs','cabs','EV')
+}
+spot_categories [icon:flag, color: yellow] {
+  spot_categorie_id serial pk
+  spot_category_name enum('general', 'vip', 'cosplayer', 'exhibitor', 'staff', 'ev_charging')
+  description text
+}
+
+parking_spots [icon: parking,color:green] {
+  parking_spot_id serial pk
+  zone_id int fk
+  spot_categorie_id int fk
+  spot_number varchar(50) unique
+  is_available boolean
+}
+parking_sessions [icon:calculator,color:yellow]{
+session_id serial pk
+vehicle_id int fk
+parking_spot_id int fk
+entry_time timestamp
+exit_time timestamp
+session_status enum('active', 'completed')
+}
+parking_tickets [icon:ticket,color:red]{
+ticket_id serial pk
+session_id int fk
+vehicale_id
+ticket_number varchar(100) unique
+barcode_data text
+issued_at timestamp
+}
+payments [icon:money,color:green]{
+  payment_id serial pk
+  session_id int fk unique
+  amount decimal
+  payment_status enum('pending', 'paid')
+  payment_method enum('cash', 'card', 'upi', 'fastag')
+  paid_at timestamp
+}
+// Relations 
+
+zones.zone_id < parking_spots.zone_id
+
+vehicle_categories.type_id < vehicles.type_id
+
+parking_spots.parking_spot_id < spot_categories.spot_categorie_id
+
+vehicles.vehicale_id < parking_sessions.session_id
+
+parking_spots.parking_spot_id < parking_sessions.session_id
+
+parking_sessions.session_id  - parking_tickets.ticket_id
+
+parking_sessions.session_id - payments.payment_id
+
+
+
+

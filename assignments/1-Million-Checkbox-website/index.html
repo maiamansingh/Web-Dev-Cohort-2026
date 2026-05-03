@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Checkbox Sync</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="text-black h-screen overflow-hidden">
+
+    <h1>
+        Realtime Checkboxes
+    </h1>
+
+    <div id="container" class="w-full h-screen overflow-auto grid grid-cols-[repeat(auto-fill,24px)] gap-1 p-2">
+    </div>
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script>
+        const socket = io("http://localhost:3000")
+        const checked = new Set()
+        let container = document.getElementById("container")
+        // 1. Event Delegation
+        container.addEventListener("change", (e) => {
+            if (e.target.type === "checkbox") {
+                const id = Number(e.target.dataset.id);
+                const state = e.target.checked;
+                // optimistic update
+                if (state) checked.add(id);
+                else checked.delete(id);
+                socket.emit("update", { id, state });
+            }
+        });
+
+        // 2. Chunked Rendering
+        const totalCheckboxes = 100000;
+        const chunkSize = 2000;
+        let currentIndex = 0;
+
+        function renderChunk() {
+            const fragment = document.createDocumentFragment();
+            const end = Math.min(currentIndex + chunkSize, totalCheckboxes);
+
+            for (let i = currentIndex; i < end; i++) {
+                const checkbox = document.createElement("input")
+                checkbox.type = "checkbox"
+                checkbox.id = `cb-${i}`
+                checkbox.dataset.id = i
+                checkbox.className = "w-5 h-5 cursor-pointer"
+                
+                // Keep visually synced if state arrived before this chunk rendered
+                if (checked.has(i)) {
+                    checkbox.checked = true;
+                }
+
+                fragment.appendChild(checkbox)
+            }
+            container.appendChild(fragment);
+            currentIndex = end;
+
+            if (currentIndex < totalCheckboxes) {
+                requestAnimationFrame(renderChunk);
+            }
+        }
+        
+        requestAnimationFrame(renderChunk);
+        socket.on("initial-state", (data) => {
+            checked.clear();
+
+            data.forEach((id) => {
+                checked.add(id);
+                const el = document.getElementById(`cb-${id}`);
+                if (el) el.checked = true;
+            });
+        });
+        socket.on("update", ({ id, state }) => {
+            if (state) checked.add(id);
+            else checked.delete(id);
+
+            const el = document.getElementById(`cb-${id}`);
+            if (el) el.checked = state;
+        });
+        socket.on("connect", () => {
+            console.log("Connected:", socket.id);
+        });
+    </script>
+
+</body>
+
+</html>
