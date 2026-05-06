@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl;
+  }
+}
+
+body {
+  background: radial-gradient(circle at top, #1a1a2e 0%, #0f0f1a 100%);
+  background-attachment: fixed;
+  color: #e2e8f0;
+  min-height: 100vh;
+}

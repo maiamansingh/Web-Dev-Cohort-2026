@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeAPI Authentication</title>
+    <!-- Modern Font: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Decorators -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <main class="app-container">
+        
+        <!-- Authentication Container (Login / Register) -->
+        <div id="auth-view" class="view glass-panel active">
+            
+            <!-- Login Form -->
+            <div id="login-container" class="form-container active">
+                <div class="header">
+                    <h2>Welcome Back</h2>
+                    <p>Enter your credentials to access your account.</p>
+                </div>
+                <form id="login-form">
+                    <div class="input-group">
+                        <label for="login-username">Username</label>
+                        <input type="text" id="login-username" name="username" required placeholder="doejohn" autocomplete="username">
+                    </div>
+                    <div class="input-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" name="password" required placeholder="••••••••" autocomplete="current-password">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="login-btn">
+                        <span class="btn-text">Sign In</span>
+                        <div class="spinner hidden"></div>
+                    </button>
+                </form>
+                <div class="footer-link">
+                    <p>Don't have an account? <button type="button" class="btn-link" onclick="toggleAuthMode()">Register here</button></p>
+                </div>
+            </div>
+
+            <!-- Register Form -->
+            <div id="register-container" class="form-container hidden">
+                <div class="header">
+                    <h2>Create Account</h2>
+                    <p>Join us and start your journey.</p>
+                </div>
+                <form id="register-form">
+                    <div class="input-group">
+                        <label for="register-email">Email</label>
+                        <input type="email" id="register-email" name="email" required placeholder="user@example.com" autocomplete="email">
+                    </div>
+                    <div class="input-group">
+                        <label for="register-username">Username</label>
+                        <input type="text" id="register-username" name="username" required placeholder="doejohn" autocomplete="username">
+                    </div>
+                    <div class="input-group">
+                        <label for="register-password">Password</label>
+                        <input type="password" id="register-password" name="password" required placeholder="••••••••" autocomplete="new-password">
+                    </div>
+                    <!-- Role is required by API, hiding it as default USER isn't listed, setting ADMIN as default per prompt or a select -->
+                    <div class="input-group">
+                        <label for="register-role">Role</label>
+                        <select id="register-role" name="role" required>
+                            <option value="USER" selected>USER</option>
+                            <option value="ADMIN">ADMIN</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="register-btn">
+                        <span class="btn-text">Sign Up</span>
+                        <div class="spinner hidden"></div>
+                    </button>
+                </form>
+                <div class="footer-link">
+                    <p>Already have an account? <button type="button" class="btn-link" onclick="toggleAuthMode()">Sign In</button></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Container (Current User Profile) -->
+        <div id="dashboard-view" class="view glass-panel hidden">
+            <div class="header dashboard-header">
+                <h2>Dashboard</h2>
+                <button type="button" class="btn btn-secondary btn-sm" id="logout-btn">
+                    <span class="btn-text">Logout</span>
+                    <div class="spinner hidden"></div>
+                </button>
+            </div>
+            
+            <div class="profile-card">
+                <div class="profile-avatar">
+                    <img id="profile-avatar-img" src="https://ui-avatars.com/api/?name=User&background=random&color=fff" alt="User Avatar">
+                </div>
+                <div class="profile-info">
+                    <h3 id="profile-username">Loading...</h3>
+                    <p id="profile-email" class="text-muted">Loading...</p>
+                    <div class="badge" id="profile-role">ROLE</div>
+                </div>
+            </div>
+
+            <div class="dashboard-stats">
+                <div class="stat-card glass-panel">
+                    <h4>Account Status</h4>
+                    <p class="text-success">Active</p>
+                </div>
+                <div class="stat-card glass-panel">
+                    <h4>Last Login</h4>
+                    <p>Just now</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

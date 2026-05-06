@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Discover beautiful random cat breeds with their details and characteristics." />
+    <title>Purrfect Discovery | Random Cat Viewer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <header>
+        <h1>Purrfect Discovery</h1>
+        <p>Explore feline breeds from around the world</p>
+      </header>
+
+      <main>
+        <div id="cat-card" class="cat-card loading">
+          <div class="card-loader">
+            <div class="spinner"></div>
+            <p>Summoning a cat...</p>
+          </div>
+          
+          <div class="card-content" id="card-content">
+            <div class="image-container">
+              <img id="cat-image" src="" alt="A random cat" />
+              <div class="origin-badge" id="cat-origin"></div>
+            </div>
+            <div class="cat-info">
+              <h2 id="cat-name"></h2>
+              <p class="cat-description" id="cat-description"></p>
+              
+              <div class="stats-grid">
+                <div class="stat-item">
+                  <span class="stat-label">Life Span</span>
+                  <span class="stat-value" id="cat-lifespan"></span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Weight</span>
+                  <span class="stat-value" id="cat-weight"></span>
+                </div>
+              </div>
+              
+              <div class="temperament-section">
+                <h3>Temperament</h3>
+                <div class="tags" id="cat-temperament">
+                  <!-- Tags will be injected here -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <button id="fetch-btn" class="primary-btn">
+          <span>Get Random Cat</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 16h5v5"/></svg>
+        </button>
+      </main>
+      
+      <footer>
+        <p>Powered by <a href="https://freeapi.app/" target="_blank">FreeAPI</a></p>
+      </footer>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
